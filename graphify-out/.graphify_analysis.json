@@ -1,0 +1,350 @@
+{
+  "communities": {
+    "0": [
+      "server_database_db",
+      "server_database_db_createpgtables",
+      "server_database_db_dbfilepath",
+      "server_database_db_default_otp_config",
+      "server_database_db_default_payment_config",
+      "server_database_db_default_pg_config",
+      "server_database_db_default_rent_config",
+      "server_database_db_dirname",
+      "server_database_db_filename",
+      "server_database_db_getguests",
+      "server_database_db_getotpconfig",
+      "server_database_db_getpaymentconfig",
+      "server_database_db_getpayments",
+      "server_database_db_getpgconfig",
+      "server_database_db_getrentconfig",
+      "server_database_db_getrooms",
+      "server_database_db_initdb",
+      "server_database_db_initial_rooms",
+      "server_database_db_initializepgpool",
+      "server_database_db_ispgconnected",
+      "server_database_db_loaddemodb",
+      "server_database_db_loadenv",
+      "server_database_db_readdbfile",
+      "server_database_db_resetdb",
+      "server_database_db_saveguests",
+      "server_database_db_saveotpconfig",
+      "server_database_db_savepaymentconfig",
+      "server_database_db_savepayments",
+      "server_database_db_savepgconfig",
+      "server_database_db_saverentconfig",
+      "server_database_db_saverooms",
+      "server_database_db_writedbfile",
+      "server_server",
+      "server_server_activeotps",
+      "server_server_app",
+      "server_server_dirname",
+      "server_server_distpath",
+      "server_server_filename"
+    ],
+    "1": [
+      "src_app",
+      "src_app_app",
+      "src_components_settings_settings",
+      "src_main",
+      "src_utils_db",
+      "src_utils_db_getguests",
+      "src_utils_db_getotpconfig",
+      "src_utils_db_getpaymentconfig",
+      "src_utils_db_getpayments",
+      "src_utils_db_getpgconfig",
+      "src_utils_db_getrentconfig",
+      "src_utils_db_getrooms",
+      "src_utils_db_initdb",
+      "src_utils_db_loaddemodb",
+      "src_utils_db_resetdb",
+      "src_utils_db_saveguests",
+      "src_utils_db_saveotpconfig",
+      "src_utils_db_savepaymentconfig",
+      "src_utils_db_savepayments",
+      "src_utils_db_savepgconfig",
+      "src_utils_db_saverentconfig",
+      "src_utils_db_saverooms",
+      "src_utils_db_testsmtp"
+    ],
+    "2": [
+      "cors",
+      "express",
+      "nodemailer",
+      "nodemon",
+      "pg",
+      "server_package",
+      "server_package_dependencies",
+      "server_package_dependencies_cors",
+      "server_package_dependencies_express",
+      "server_package_dependencies_nodemailer",
+      "server_package_dependencies_pg",
+      "server_package_description",
+      "server_package_devdependencies",
+      "server_package_devdependencies_nodemon",
+      "server_package_main",
+      "server_package_name",
+      "server_package_scripts",
+      "server_package_scripts_dev",
+      "server_package_scripts_start",
+      "server_package_type",
+      "server_package_version"
+    ],
+    "3": [
+      "lucide_react",
+      "package",
+      "package_dependencies",
+      "package_dependencies_lucide_react",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_dev_client",
+      "package_scripts_dev_server",
+      "package_scripts_lint",
+      "package_scripts_postinstall",
+      "package_scripts_preview",
+      "package_scripts_start",
+      "package_type",
+      "package_version",
+      "react",
+      "react_dom"
+    ],
+    "4": [
+      "src_components_icons",
+      "src_components_icons_iconbed",
+      "src_components_icons_iconcheck",
+      "src_components_icons_icondashboard",
+      "src_components_icons_iconedit",
+      "src_components_icons_iconeye",
+      "src_components_icons_iconinfo",
+      "src_components_icons_iconlogout",
+      "src_components_icons_iconmail",
+      "src_components_icons_iconmoon",
+      "src_components_icons_iconphone",
+      "src_components_icons_iconqrcode",
+      "src_components_icons_iconsettings",
+      "src_components_icons_iconsun",
+      "src_components_settings"
+    ],
+    "5": [
+      "concurrently",
+      "oxlint",
+      "package_devdependencies",
+      "package_devdependencies_concurrently",
+      "package_devdependencies_oxlint",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_vite",
+      "package_devdependencies_vitejs_plugin_react",
+      "types_react",
+      "types_react_dom",
+      "vite",
+      "vitejs_plugin_react"
+    ],
+    "6": [
+      "src_components_guestmanagement",
+      "src_components_guestmanagement_guestmanagement",
+      "src_components_icons_iconarrowright",
+      "src_components_icons_iconcopy",
+      "src_components_icons_iconsmartphone",
+      "src_components_icons_iconupload",
+      "src_components_payments",
+      "src_components_payments_payments",
+      "src_utils_imagecompressor",
+      "src_utils_imagecompressor_compressimage"
+    ],
+    "7": [
+      "oxlintrc",
+      "oxlintrc_plugins",
+      "oxlintrc_rules",
+      "oxlintrc_rules_react_only_export_components",
+      "oxlintrc_rules_react_rules_of_hooks",
+      "oxlintrc_schema",
+      "ref_oxc",
+      "ref_warn"
+    ],
+    "8": [
+      "src_components_icons_iconclose",
+      "src_components_icons_iconplus",
+      "src_components_icons_iconroom",
+      "src_components_icons_icontrash",
+      "src_components_roommanagement",
+      "src_components_roommanagement_roommanagement"
+    ],
+    "9": [
+      "src_components_icons_iconguest",
+      "src_components_icons_iconshieldcheck",
+      "src_components_login",
+      "src_components_login_login",
+      "src_utils_db_sendotp",
+      "src_utils_db_verifyotp"
+    ],
+    "10": [
+      "ref_react",
+      "src_components_dashboard",
+      "src_components_dashboard_dashboard",
+      "src_components_icons_iconbuilding",
+      "src_components_icons_iconpayment"
+    ],
+    "11": [
+      "vite_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.12091038406827881,
+    "1": 0.22529644268774704,
+    "2": 0.09523809523809523,
+    "3": 0.09523809523809523,
+    "4": 0.18095238095238095,
+    "5": 0.15384615384615385,
+    "6": 0.3111111111111111,
+    "7": 0.25,
+    "8": 0.3333333333333333,
+    "9": 0.4666666666666667,
+    "10": 0.4,
+    "11": 1.0
+  },
+  "gods": [
+    {
+      "id": "src_app_app",
+      "label": "App()",
+      "degree": 18
+    },
+    {
+      "id": "server_database_db_readdbfile",
+      "label": "readDbFile()",
+      "degree": 16
+    },
+    {
+      "id": "server_database_db_writedbfile",
+      "label": "writeDbFile()",
+      "degree": 11
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "degree": 10
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 9
+    },
+    {
+      "id": "src_components_icons_iconclose",
+      "label": "IconClose()",
+      "degree": 6
+    },
+    {
+      "id": "server_database_db_initdb",
+      "label": "initDb()",
+      "degree": 5
+    },
+    {
+      "id": "server_database_db_getpgconfig",
+      "label": "getPgConfig()",
+      "degree": 5
+    },
+    {
+      "id": "server_database_db_savepgconfig",
+      "label": "savePgConfig()",
+      "degree": 5
+    },
+    {
+      "id": "src_components_icons_iconroom",
+      "label": "IconRoom()",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "GuestManagement()",
+      "target": "react",
+      "source_files": [
+        "src/components/GuestManagement.jsx",
+        "package.json"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "App()",
+      "target": "getGuests()",
+      "source_files": [
+        "src/App.jsx",
+        "src/utils/db.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "App()",
+      "target": "getOtpConfig()",
+      "source_files": [
+        "src/App.jsx",
+        "src/utils/db.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "App()",
+      "target": "getPaymentConfig()",
+      "source_files": [
+        "src/App.jsx",
+        "src/utils/db.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "App()",
+      "target": "getPayments()",
+      "source_files": [
+        "src/App.jsx",
+        "src/utils/db.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `GuestManagement()` connect `Payments.jsx` to `App.jsx`, `scripts`?",
+      "why": "High betweenness centrality (0.179) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `react` connect `scripts` to `Payments.jsx`?",
+      "why": "High betweenness centrality (0.178) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `$schema`, `oxc`, `react/rules-of-hooks` to the rest of the system?",
+      "why": "50 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `database/db.js` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.12091038406827881 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `server/package.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `scripts` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

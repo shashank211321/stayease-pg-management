@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Redirect rule to proxy client API requests to the backend server.
+# REPLACE 'https://your-backend-service.onrender.com' with your actual backend URL (e.g. Render/Koyeb URL) once deployed.
+[[redirects]]
+  from = "/api/*"
+  to = "https://your-backend-service.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+# Fallback rule for single-page app (SPA) client-side routing.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
