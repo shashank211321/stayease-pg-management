@@ -6,7 +6,7 @@
 # REPLACE 'https://your-backend-service.onrender.com' with your actual backend URL (e.g. Render/Koyeb URL) once deployed.
 [[redirects]]
   from = "/api/*"
-  to = "https://your-backend-service.onrender.com/api/:splat"
+  to = "https://stayease-backend.onrender.com/api/:splat"
   status = 200
   force = true
 
