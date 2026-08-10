@@ -2,9 +2,29 @@ import express from 'express';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
 import dns from 'dns';
+import net from 'net';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+
+// Helper function to resolve SMTP host to IPv4 to prevent IPv6 routing failures in cloud environments
+async function resolveSmtpHost(host) {
+  if (!host) return 'smtp.gmail.com';
+  const trimmed = host.trim();
+  if (trimmed === 'localhost' || trimmed === '127.0.0.1' || net.isIP(trimmed)) {
+    return trimmed;
+  }
+  try {
+    const addresses = await dns.promises.resolve4(trimmed);
+    if (addresses && addresses.length > 0) {
+      console.log(`Manually resolved SMTP host ${trimmed} to IPv4: ${addresses[0]}`);
+      return addresses[0];
+    }
+  } catch (err) {
+    console.warn(`Failed to resolve SMTP host ${trimmed} to IPv4:`, err);
+  }
+  return trimmed;
+}
 import {
   initDb,
   getRooms,
@@ -198,8 +218,11 @@ app.post('/api/send-otp', async (req, res) => {
     const otpConfig = await getOtpConfig();
 
     if (isEmail && otpConfig.smtpEnabled && otpConfig.smtpHost && otpConfig.smtpUser && otpConfig.smtpPass) {
+      const smtpHostOriginal = otpConfig.smtpHost ? otpConfig.smtpHost.trim() : 'smtp.gmail.com';
+      const resolvedHost = await resolveSmtpHost(smtpHostOriginal);
+
       const transporter = nodemailer.createTransport({
-        host: otpConfig.smtpHost ? otpConfig.smtpHost.trim() : 'smtp.gmail.com',
+        host: resolvedHost,
         port: parseInt(otpConfig.smtpPort) || 465,
         secure: otpConfig.smtpSecure !== false,
         auth: {
@@ -207,8 +230,8 @@ app.post('/api/send-otp', async (req, res) => {
           pass: otpConfig.smtpPass ? otpConfig.smtpPass.trim().replace(/\s+/g, '') : ''
         },
         connectionTimeout: 10000,
-        dnsLookup: (hostname, options, callback) => {
-          dns.lookup(hostname, { ...options, family: 4 }, callback);
+        tls: {
+          servername: smtpHostOriginal
         }
       });
 
@@ -290,8 +313,11 @@ app.post('/api/test-smtp', async (req, res) => {
   }
 
   try {
+    const smtpHostOriginal = config.smtpHost ? config.smtpHost.trim() : 'smtp.gmail.com';
+    const resolvedHost = await resolveSmtpHost(smtpHostOriginal);
+
     const transporter = nodemailer.createTransport({
-      host: config.smtpHost ? config.smtpHost.trim() : 'smtp.gmail.com',
+      host: resolvedHost,
       port: parseInt(config.smtpPort) || 465,
       secure: config.smtpSecure !== false,
       auth: {
@@ -299,8 +325,8 @@ app.post('/api/test-smtp', async (req, res) => {
         pass: config.smtpPass ? config.smtpPass.trim().replace(/\s+/g, '') : ''
       },
       connectionTimeout: 10000,
-      dnsLookup: (hostname, options, callback) => {
-        dns.lookup(hostname, { ...options, family: 4 }, callback);
+      tls: {
+        servername: smtpHostOriginal
       }
     });
 
