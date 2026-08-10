@@ -15,10 +15,10 @@ async function resolveSmtpHost(host) {
     return trimmed;
   }
   try {
-    const addresses = await dns.promises.resolve4(trimmed);
-    if (addresses && addresses.length > 0) {
-      console.log(`Manually resolved SMTP host ${trimmed} to IPv4: ${addresses[0]}`);
-      return addresses[0];
+    const result = await dns.promises.lookup(trimmed, { family: 4 });
+    if (result && result.address) {
+      console.log(`Manually resolved SMTP host ${trimmed} to IPv4: ${result.address}`);
+      return result.address;
     }
   } catch (err) {
     console.warn(`Failed to resolve SMTP host ${trimmed} to IPv4:`, err);
