@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
+import dns from 'dns';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -206,7 +207,9 @@ app.post('/api/send-otp', async (req, res) => {
           pass: otpConfig.smtpPass ? otpConfig.smtpPass.trim().replace(/\s+/g, '') : ''
         },
         connectionTimeout: 10000,
-        family: 4
+        dnsLookup: (hostname, options, callback) => {
+          dns.lookup(hostname, { ...options, family: 4 }, callback);
+        }
       });
 
       const senderName = otpConfig.senderEmail ? otpConfig.senderEmail.split('@')[0] : 'StayEase PG';
@@ -296,7 +299,9 @@ app.post('/api/test-smtp', async (req, res) => {
         pass: config.smtpPass ? config.smtpPass.trim().replace(/\s+/g, '') : ''
       },
       connectionTimeout: 10000,
-      family: 4
+      dnsLookup: (hostname, options, callback) => {
+        dns.lookup(hostname, { ...options, family: 4 }, callback);
+      }
     });
 
     const senderName = config.senderEmail ? config.senderEmail.split('@')[0] : 'StayEase PG';
