@@ -221,6 +221,8 @@ app.post('/api/send-otp', async (req, res) => {
       const smtpHostOriginal = otpConfig.smtpHost ? otpConfig.smtpHost.trim() : 'smtp.gmail.com';
       const resolvedHost = await resolveSmtpHost(smtpHostOriginal);
 
+      console.log(`[SMTP Debug] Host: ${smtpHostOriginal} (resolved: ${resolvedHost}), Port: ${otpConfig.smtpPort}, Secure: ${otpConfig.smtpSecure}, User: ${otpConfig.smtpUser}`);
+
       const transporter = nodemailer.createTransport({
         host: resolvedHost,
         port: parseInt(otpConfig.smtpPort) || 465,
@@ -315,6 +317,8 @@ app.post('/api/test-smtp', async (req, res) => {
   try {
     const smtpHostOriginal = config.smtpHost ? config.smtpHost.trim() : 'smtp.gmail.com';
     const resolvedHost = await resolveSmtpHost(smtpHostOriginal);
+
+    console.log(`[SMTP Debug] Host: ${smtpHostOriginal} (resolved: ${resolvedHost}), Port: ${config.smtpPort}, Secure: ${config.smtpSecure}, User: ${config.smtpUser}`);
 
     const transporter = nodemailer.createTransport({
       host: resolvedHost,
