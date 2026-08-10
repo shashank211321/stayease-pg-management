@@ -204,7 +204,9 @@ app.post('/api/send-otp', async (req, res) => {
         auth: {
           user: otpConfig.smtpUser ? otpConfig.smtpUser.trim() : '',
           pass: otpConfig.smtpPass ? otpConfig.smtpPass.trim().replace(/\s+/g, '') : ''
-        }
+        },
+        connectionTimeout: 10000,
+        family: 4
       });
 
       const senderName = otpConfig.senderEmail ? otpConfig.senderEmail.split('@')[0] : 'StayEase PG';
@@ -292,7 +294,9 @@ app.post('/api/test-smtp', async (req, res) => {
       auth: {
         user: config.smtpUser ? config.smtpUser.trim() : '',
         pass: config.smtpPass ? config.smtpPass.trim().replace(/\s+/g, '') : ''
-      }
+      },
+      connectionTimeout: 10000,
+      family: 4
     });
 
     const senderName = config.senderEmail ? config.senderEmail.split('@')[0] : 'StayEase PG';
