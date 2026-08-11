@@ -11,6 +11,28 @@ import {
 } from './Icons';
 import { compressImage } from '../utils/imageCompressor';
 
+const monthNames = [
+  'January', 'February', 'March', 'April', 'May', 'June', 
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+function monthToInputVal(monthStr) {
+  if (!monthStr) return '';
+  const [monthName, year] = monthStr.split(' ');
+  const monthIdx = monthNames.indexOf(monthName);
+  if (monthIdx === -1) return '';
+  const monthNum = String(monthIdx + 1).padStart(2, '0');
+  return `${year}-${monthNum}`;
+}
+
+function inputValToMonth(inputVal) {
+  if (!inputVal) return '';
+  const [year, monthNum] = inputVal.split('-');
+  const monthIdx = parseInt(monthNum, 10) - 1;
+  const monthName = monthNames[monthIdx];
+  return `${monthName} ${year}`;
+}
+
 export default function Payments({
   guests,
   payments,
@@ -203,18 +225,15 @@ export default function Payments({
 
       {/* Selector & Statistics Cards - Responsive Layout Wrapper */}
       <div className="collections-header-row">
-        {/* Month Picker dropdown */}
+        {/* Month Picker calendar */}
         <div className="form-group period-selector-card">
           <label className="form-label text-xs">Select Period</label>
-          <select
-            value={selectedMonth}
-            onChange={(e) => setSelectedMonth(e.target.value)}
-            className="form-select py-2.5"
-          >
-            <option value="May 2026">May 2026</option>
-            <option value="June 2026">June 2026</option>
-            <option value="July 2026">July 2026</option>
-          </select>
+          <input
+            type="month"
+            value={monthToInputVal(selectedMonth)}
+            onChange={(e) => setSelectedMonth(inputValToMonth(e.target.value))}
+            className="form-input py-2"
+          />
         </div>
 
         {/* Stats Summary Area */}
